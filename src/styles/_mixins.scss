@@ -1,0 +1,45 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-grow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    flex-grow: 1;
+  }
+}
+@mixin flex-flex {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  & > * {
+    flex-grow: 1;
+    align-self: center;
+  }
+}
+
+$breakpoints: (
+  'small'    : 450px,
+  'desktop'  : 1280px,
+  'large'    : 1600px
+); 
+
+@mixin bp($bpvalue) {
+  // Retrieves the value from the key
+  $value: map-get($breakpoints, $bpvalue);
+  // If the key exists in the map
+  @if $value != null {
+    // Prints a media query based on the value
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "oups"
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
