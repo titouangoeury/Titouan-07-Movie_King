@@ -10,16 +10,8 @@ body {
 .container {
   width: 90%;
   max-width: 1200px;
-  background: variables.$color-primary;
   margin: 0 auto;
   font-family: variables.$txt-commun;
-  @include mixins.bp('desktop') {
-    background: yellow;
-  }
-  @media (min-width: 400px) {
-    background: lime;
-  }
 }
-
 
 

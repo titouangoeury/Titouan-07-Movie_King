@@ -115,7 +115,7 @@
   &::after {
     content: "";
     position: absolute;
-    inset: 6rem 0 0 0;
+    inset: 0;
     background-image: url("../images/patternfond.png");
     background-size: cover;
     background-position: center;
@@ -150,7 +150,7 @@
     font-size: clamp(2.8rem, 6vw, 5.5rem);
     line-height: 0.92;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 50;
     letter-spacing: 0.03em;
     text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.75);
 

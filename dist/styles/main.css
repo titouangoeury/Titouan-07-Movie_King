@@ -55,19 +55,8 @@ body {
 .container {
   width: 90%;
   max-width: 1200px;
-  background: #F00;
   margin: 0 auto;
   font-family: "Manrope", Arial, sans-serif;
-}
-@media screen and (min-width: 1280px) {
-  .container {
-    background: yellow;
-  }
-}
-@media (min-width: 400px) {
-  .container {
-    background: lime;
-  }
 }
 
 .page-home {
@@ -175,7 +164,7 @@ body {
 .hero::after {
   content: "";
   position: absolute;
-  inset: 6rem 0 0 0;
+  inset: 0;
   background-image: url("../images/patternfond.png");
   background-size: cover;
   background-position: center;
@@ -207,7 +196,7 @@ body {
   font-size: clamp(2.8rem, 6vw, 5.5rem);
   line-height: 0.92;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 50;
   letter-spacing: 0.03em;
   text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.75);
 }
@@ -798,10 +787,8 @@ body {
 .modal__avatar-image {
   width: 10.5rem;
   height: 12.5rem;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center bottom;
-     object-position: center bottom;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
 }
 .modal__avatar-dot {
@@ -841,9 +828,6 @@ body {
   font-size: 1.05rem;
   outline: none;
   box-sizing: border-box;
-}
-.modal__input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.35);
 }
 .modal__input::placeholder {
   color: rgba(255, 255, 255, 0.35);

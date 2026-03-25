@@ -70,7 +70,7 @@ document.querySelectorAll("[data-open-modal]").forEach((trigger) => {
   const targetModalId = trigger.getAttribute("data-open-modal");
 
   trigger.addEventListener("click", () => {
-    openModalById(targetModalId);
+    openModalById(targetModalId, trigger);
   });
 });
 
