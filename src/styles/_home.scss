@@ -116,12 +116,10 @@
     content: "";
     position: absolute;
     inset: 6rem 0 0 0;
-    background-image: repeating-linear-gradient(
-      -12deg,
-      transparent 0 2.2rem,
-      rgba(255, 255, 255, 0.16) 2.2rem 3.5rem,
-      transparent 3.5rem 6rem
-    );
+    background-image: url("../images/patternfond.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     opacity: 0.8;
     pointer-events: none;
   }
@@ -285,7 +283,7 @@
   &__title {
     margin: 0 0 2rem;
     color: #4f14c5;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
     font-weight: 500;
     font-family: Georgia, "Times New Roman", serif;
   }
@@ -304,6 +302,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  font-family: "Manrope", "Roboto", Arial, sans-serif;
 
   &__item {
     display: grid;
@@ -528,5 +527,119 @@
     grid-column: 2 / -1;
     margin-left: 0;
     margin-top: 0.3rem;
+  }
+}
+
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  &.is-open {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(239, 185, 28, 0.9);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 32rem;
+    text-align: center;
+  }
+
+  &__glitch {
+    margin: 0 0 2rem;
+    font-family: "Rubik Glitch", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #4f14c5;
+    text-transform: uppercase;
+  }
+
+  &__panel {
+    background: #f2f2f2;
+    border: 4px solid #111;
+    box-shadow: 10px 10px 0 #111;
+    padding: 2rem;
+    text-align: left;
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    color: #4f14c5;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  &__text {
+    margin: 0 0 1.5rem;
+    color: #4d5563;
+    line-height: 1.6;
+  }
+
+  &__choices {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  &__choice {
+    min-height: 3.5rem;
+    padding: 0.9rem 1rem;
+    border: 4px solid #182033;
+    background: #f2f2f2;
+    box-shadow: 4px 4px 0 #182033;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+
+    &.is-active {
+      background: #efb91c;
+      border-color: #efb91c;
+      box-shadow: 4px 4px 0 #111;
+    }
+  }
+
+  &__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    min-width: 10rem;
+    min-height: 3.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: 4px solid #111;
+    box-shadow: 4px 4px 0 #111;
+    cursor: pointer;
+
+    &--secondary {
+      background: #f2f2f2;
+      color: #111;
+    }
+
+    &--primary {
+      background: #efb91c;
+      color: #111;
+    }
   }
 }

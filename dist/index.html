@@ -44,8 +44,25 @@
         </p>
 
         <div class="hero__actions">
-          <a href="./pages/quiz.html" class="btn btn--primary">Start Quiz</a>
-          <button type="button" class="btn btn--secondary">Browse by Category</button>
+          <button
+            type="button"
+            class="btn btn--primary"
+            id="open-profile-modal"
+            aria-controls="profile-modal"
+            aria-expanded="false"
+          >
+            Start Quiz
+          </button>
+
+          <button 
+            type="button" 
+            class="btn btn--secondary" 
+            id="open-category-modal"
+            aria-controls="category-modal"
+            aria-expanded="false"
+          >
+            Browse by Category
+          </button>
         </div>
 
         <div class="feature-cards">
@@ -150,6 +167,101 @@
       </div>
     </div>
   </footer>
+  <div
+    class="modal modal--category"
+    id="category-modal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="category-modal-title"
+  >
+    <div class="modal__overlay" data-modal-close></div>
 
+    <div class="modal__content">
+      <h2 class="modal__glitch" id="category-modal-title">Choose Your<br>Challenge</h2>
+
+      <div class="modal__panel" tabindex="-1">
+        <h3 class="modal__title">Select Category</h3>
+        <p class="modal__text">
+          Choose a movie category to focus your quiz, or select "All Categories" for a mixed experience.
+        </p>
+
+        <div class="modal__choices" role="list" aria-label="Quiz categories">
+          <button type="button" class="modal__choice is-active" data-category="all" aria-pressed="true">All Categories</button>
+          <button type="button" class="modal__choice" data-category="action" aria-pressed="false">Action</button>
+          <button type="button" class="modal__choice" data-category="drama" aria-pressed="false">Drama</button>
+          <button type="button" class="modal__choice" data-category="thriller" aria-pressed="false">Thriller</button>
+          <button type="button" class="modal__choice" data-category="romance" aria-pressed="false">Romance</button>
+          <button type="button" class="modal__choice" data-category="sci-fi" aria-pressed="false">Sci-Fi</button>
+          <button type="button" class="modal__choice" data-category="fantasy" aria-pressed="false">Fantasy</button>
+        </div>
+
+        <div class="modal__actions">
+          <button type="button" class="modal__btn modal__btn--secondary" id="close-category-modal" data-modal-close>
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="modal__btn modal__btn--primary"
+            id="open-profile-from-category"
+            data-open-modal="profile-modal"
+          >
+            Start Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal modal--profile"
+    id="profile-modal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="profile-modal-title"
+  >
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__content modal__content--profile">
+      <h2 class="modal__glitch modal__glitch--light" id="profile-modal-title">Profile</h2>
+
+      <div class="modal__panel modal__panel--profile" tabindex="-1">
+        <h3 class="modal__headline">Who Are You ?</h3>
+        <p class="modal__subtext">Are you a king, a queen or ...</p>
+
+        <div class="modal__avatars" role="radiogroup" aria-label="Choose your profile">
+          <label class="modal__avatar-option">
+            <input class="modal__avatar-input" type="radio" name="profile-avatar" value="king">
+            <img class="modal__avatar-image" src="./images/king.svg" alt="King Quotes avatar">
+            <span class="modal__avatar-dot"></span>
+          </label>
+
+          <label class="modal__avatar-option">
+            <input class="modal__avatar-input" type="radio" name="profile-avatar" value="binari" checked>
+            <img class="modal__avatar-image" src="./images/binari.svg" alt="No Binari avatar">
+            <span class="modal__avatar-dot"></span>
+          </label>
+
+          <label class="modal__avatar-option">
+            <input class="modal__avatar-input" type="radio" name="profile-avatar" value="queen">
+            <img class="modal__avatar-image" src="./images/queen.svg" alt="Quiz Queen avatar">
+            <span class="modal__avatar-dot"></span>
+          </label>
+        </div>
+
+        <label class="modal__field">
+          <span class="modal__label">Nickname</span>
+          <input class="modal__input" type="text" name="nickname" placeholder="" autocomplete="nickname">
+        </label>
+
+        <a href="./pages/quiz.html" class="modal__btn modal__btn--primary modal__btn--wide">
+          Start Quiz
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./scripts/modal.js"></script>
 </body>
 </html>

@@ -1,0 +1,297 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5rem 1rem 2rem;
+
+  &.is-open {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(239, 185, 28, 0.82);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 26.25rem;
+  }
+
+  &__glitch {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    font-family: "Rubik Glitch", system-ui, sans-serif;
+    font-size: clamp(3rem, 4vw, 3.8rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: #4f14c5;
+  }
+        
+  &__panel {
+    background: #f2f2f2;
+    border: 4px solid #111;
+    box-shadow: 8px 8px 0 #111;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 0.75rem;
+    color: #4f14c5;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: "Roboto", Arial, sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  &__text {
+    margin: 0 0 1.25rem;
+    color: #4d5563;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    text-align: left;
+    font-family: "Roboto", Arial, sans-serif;
+  }
+
+  &__choices {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  &__choice {
+    width: 100%;
+    height: 3rem;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    border: 3px solid #182033;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    box-shadow: 4px 4px 0 #111;
+    color: #182033;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: left;
+    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+
+    &.is-active {
+      background: #efb91c;
+      color: #111;
+    }
+  }
+
+  &__actions {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  &__btn {
+    min-width: 0;
+    height: 3rem;
+    min-height: 3rem;
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 3px solid #111;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 0 #111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.9rem;
+    font-family: "Roboto", Arial, sans-serif;
+    cursor: pointer;
+
+    &--secondary {
+      background: #efefef;
+      color: #111;
+    }
+
+    &--primary {
+      background: #efb91c;
+      color: #111;
+    }
+  }
+
+  &--profile {
+    .modal__overlay {
+      background: rgba(19, 19, 19, 0.82);
+    }
+  }
+
+  &__content--profile {
+    max-width: 47rem;
+  }
+
+  &__glitch--light {
+    color: #fff;
+    text-shadow: 0 0 0 transparent;
+  }
+
+  &__panel--profile {
+    position: relative;
+    background: #262626;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 14px 14px 0 #fff;
+    padding: 2.8rem 2.5rem 3rem;
+  }
+
+  &__headline {
+    margin: 0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: clamp(2rem, 3vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__subtext {
+    margin: 1rem 0 0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  &__avatars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+
+  &__avatar-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  &__avatar-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__avatar-image {
+    width: 10.5rem;
+    height: 12.5rem;
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+  }
+
+  &__avatar-dot {
+    width: 1.55rem;
+    height: 1.55rem;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+  }
+
+  &__avatar-input:checked + .modal__avatar-image + .modal__avatar-dot {
+    background: #efb91c;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2.75rem;
+  }
+
+  &__label {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__input {
+    width: 100%;
+    border: 0;
+    border-bottom: 4px solid #fff;
+    padding: 0 0 0.8rem;
+    background: transparent;
+    color: #fff;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1.05rem;
+    outline: none;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  &__btn--wide {
+    margin-top: 3rem;
+    align-self: center;
+    width: min(100%, 23rem);
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .modal {
+    padding-top: 4rem;
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__panel {
+      padding: 1.25rem;
+    }
+
+    &__content--profile {
+      max-width: 100%;
+    }
+
+    &__panel--profile {
+      padding: 2rem 1.25rem 2.25rem;
+      box-shadow: 10px 10px 0 #fff;
+    }
+
+    &__avatars {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    &__avatar-image {
+      width: 8.5rem;
+      height: 10rem;
+    }
+
+    &__btn--wide {
+      width: 100%;
+    }
+  }
+}
