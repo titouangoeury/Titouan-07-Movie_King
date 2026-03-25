@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Kings | Quiz</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body class="page-quiz">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo" aria-label="Movie Kings home">
+        <img src="../images/logo-movie-kings.svg" alt="Movie Kings logo" class="site-logo__icon" />
+        <span class="site-logo__text">Movie Kings</span>
+      </a>
+
+      <button type="button" class="quiz__stop">Stop Quiz</button>
+    </div>
+  </header>
+
+  <main class="quiz">
+    <div class="quiz__inner">
+      <section class="quiz__progress" aria-label="Quiz progress">
+        <div class="quiz__progress-head">
+          <span>Question 1 of 10</span>
+          <span>10%</span>
+        </div>
+
+        <div class="quiz__progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-label="Quiz completion">
+          <span class="quiz__progress-fill"></span>
+        </div>
+      </section>
+
+      <section class="quiz__card" aria-labelledby="quiz-question">
+        <h1 class="quiz__question" id="quiz-question">"Here's looking at you, kid."</h1>
+
+        <ul class="quiz__answers" aria-label="Answer choices">
+          <li><button type="button" class="quiz__answer">Casablanca</button></li>
+          <li><button type="button" class="quiz__answer">Gone with the Wind</button></li>
+          <li><button type="button" class="quiz__answer">The Maltese Falcon</button></li>
+          <li><button type="button" class="quiz__answer">Citizen Kane</button></li>
+        </ul>
+
+        <div class="quiz__actions">
+          <button type="button" class="quiz__submit" disabled>Submit Answer</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="quiz-footer"></footer>
+
+  <script src="../scripts/quiz.js"></script>
+</body>
+</html>
