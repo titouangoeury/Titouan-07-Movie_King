@@ -117,6 +117,8 @@ body {
   inset: 0 0 auto 0;
   height: 6rem;
   background-image: url("../images/patternronds.png");
+  background-size: 60%;
+  opacity: 0.8;
   pointer-events: none;
 }
 .hero__inner {
@@ -333,7 +335,10 @@ body {
 }
 .site-footer__stripe {
   height: 1.2rem;
-  background-image: repeating-linear-gradient(-45deg, #efb91c 0 12px, #d79d00 12px 24px);
+  background-image: url("../images/FondLignesJaunes1.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
   border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
 .site-footer__inner {
