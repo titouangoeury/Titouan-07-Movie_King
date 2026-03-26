@@ -35,14 +35,38 @@
         <h1 class="quiz__question" id="quiz-question">"Here's looking at you, kid."</h1>
 
         <ul class="quiz__answers" aria-label="Answer choices">
-          <li><button type="button" class="quiz__answer">Casablanca</button></li>
-          <li><button type="button" class="quiz__answer">Gone with the Wind</button></li>
-          <li><button type="button" class="quiz__answer">The Maltese Falcon</button></li>
-          <li><button type="button" class="quiz__answer">Citizen Kane</button></li>
+          <li>
+            <button type="button" class="quiz__answer" data-correct="true">
+              <span class="quiz__answer-title">Casablanca</span>
+              <span class="quiz__answer-meta">Michael Curtiz</span>
+              <span class="quiz__answer-year">1942</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="quiz__answer">
+              <span class="quiz__answer-title">Gone with the Wind</span>
+              <span class="quiz__answer-meta">Victor Fleming</span>
+              <span class="quiz__answer-year">1939</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="quiz__answer">
+              <span class="quiz__answer-title">The Maltese Falcon</span>
+              <span class="quiz__answer-meta">John Huston</span>
+              <span class="quiz__answer-year">1941</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="quiz__answer">
+              <span class="quiz__answer-title">Citizen Kane</span>
+              <span class="quiz__answer-meta">Orson Welles</span>
+              <span class="quiz__answer-year">1941</span>
+            </button>
+          </li>
         </ul>
 
         <div class="quiz__actions">
-          <button type="button" class="quiz__submit" disabled>Submit Answer</button>
+          <button type="button" class="quiz__submit quiz__submit--disabled" disabled>Submit Answer</button>
         </div>
       </section>
     </div>
