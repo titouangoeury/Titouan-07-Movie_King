@@ -1,7 +1,8 @@
 const answerButtons = Array.from(document.querySelectorAll(".quiz__answer"));
+const answerInputs = Array.from(document.querySelectorAll(".quiz__answer-input"));
 const submitButton = document.querySelector(".quiz__submit");
 
-if (answerButtons.length && submitButton) {
+if (answerButtons.length && answerInputs.length && submitButton) {
   let selectedAnswer = null;
   let hasSubmitted = false;
 
@@ -29,19 +30,25 @@ if (answerButtons.length && submitButton) {
   const resetQuiz = () => {
     selectedAnswer = null;
     hasSubmitted = false;
+    answerInputs.forEach((input) => {
+      input.checked = false;
+      input.disabled = false;
+    });
     clearAnswerStates();
     setSubmitState("quiz__submit--disabled", "Submit Answer");
   };
 
-  answerButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+  answerInputs.forEach((input) => {
+    input.addEventListener("change", () => {
       if (hasSubmitted) {
         return;
       }
 
-      selectedAnswer = button;
+      selectedAnswer = input.closest(".quiz__answer");
       clearAnswerStates();
-      button.classList.add("quiz__answer--selected");
+      if (selectedAnswer) {
+        selectedAnswer.classList.add("quiz__answer--selected");
+      }
       setSubmitState("quiz__submit--active", "Submit Answer");
     });
   });
@@ -57,6 +64,9 @@ if (answerButtons.length && submitButton) {
     }
 
     hasSubmitted = true;
+    answerInputs.forEach((input) => {
+      input.disabled = true;
+    });
     clearAnswerStates();
 
     const correctAnswer = answerButtons.find(
